@@ -5,7 +5,7 @@ const nextConfig = {
   // https://github.com/adobe/react-spectrum/labels/strict%20mode
   reactStrictMode: false,
   output: 'export',
-  basePath: '/builder-test-auto-deploy'
+  basePath: 'YOUR_REPO_NAME'
 };
 
 module.exports = nextConfig;

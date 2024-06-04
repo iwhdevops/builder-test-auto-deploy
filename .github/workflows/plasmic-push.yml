@@ -16,14 +16,12 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - id: sed
-        name: Set up sed
-        run: sudo apt install sed
       - id: next-base-path
         name: Add basePath to next configuration file
-        run: REPO=${{ github.repository }} && REPO_NAME_ONLY=$(echo $REPO | cut -d'/' -f2) && \
-             sudo sed -i.bak s,YOUR_REPO_NAME,/${REPO_NAME_ONLY},g ./next.config.js && \
-             rm ./next.config.js.bak
+        run: |
+          REPO=${{ github.repository }} && REPO_NAME_ONLY=$(echo $REPO | cut -d'/' -f2) \
+          sudo sed -i.bak s,YOUR_REPO_NAME,/${REPO_NAME_ONLY},g ./next.config.js \
+          rm ./next.config.js.bak
       - id: node
         name: Set up node v18
         uses: actions/setup-node@v2

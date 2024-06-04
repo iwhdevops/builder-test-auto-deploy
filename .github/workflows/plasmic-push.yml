@@ -16,7 +16,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - id: install sed
+      - id: sed
         name: Set up sed
         run: apt install sed
       - id: next-base-path

@@ -21,9 +21,9 @@ jobs:
         run: |
           REPO=${{ github.repository }} \
           REPO_NAME_ONLY=$(echo $REPO | cut -d'/' -f2) && \
-          sed -i.bak s,YOUR_REPO_NAME,/${REPO_NAME_ONLY},g ./next.config.js && \
+          sed -i.bak s,YOUR_REPO_NAME,/b,g ./next.config.js && \
           rm ./next.config.js.bak && \
-          echo Working dir $(pwd)
+          ls
       - id: node
         name: Set up node v18
         uses: actions/setup-node@v2

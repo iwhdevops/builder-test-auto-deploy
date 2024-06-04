@@ -20,7 +20,7 @@ jobs:
         name: Adding basePath to next.config.js file
         run: REPO=${{ github.repository }} && \
              REPO_NAME_ONLY=$(echo $REPO | cut -d'/' -f2) && \
-             sed -i.bak s,YOUR_REPO_NAME,/${REPO_NAME_ONLY},g ./next.config.js && \
+             sed -i.bak s,YOUR_REPO_NAME,/$REPO_NAME_ONLY,g ./next.config.js && \
              rm next.config.js.bak
       - id: node
         name: Set up node v18

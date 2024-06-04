@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
       - id: sed
         name: Set up sed
-        run: apt install sed
+        run: sudo apt install sed
       - id: next-base-path
         name: Add basePath to next configuration file
         run: REPO=${{ github.repository }} && REPO_NAME_ONLY=$(echo $REPO | cut -d'/' -f2) && \
